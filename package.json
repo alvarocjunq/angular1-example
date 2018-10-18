@@ -5,7 +5,8 @@
   "author": "Thinkster",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "gulp build"
   },
   "dependencies": {
     "angular": "^1.5.0-rc.2",
