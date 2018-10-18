@@ -10,8 +10,10 @@ app.use(express.static(__dirname + '/build'));
 app.use(cors())
 
 app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/build/index.html'));
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', '*');
+    res.sendFile(path.join(__dirname+'/build/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
